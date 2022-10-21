@@ -8,13 +8,14 @@ args = args.sort(function(a, b) {
 
 let newArgs = [];
 for (const iterator of args) {
-  newArgs.push(Number(iterator));
+  newArgs.push(Number(iterator)*1000);
 }
 
 
 for (const iterator of newArgs) {
   if (typeof(iterator) === "number" && iterator > -1) {
     setTimeout(() => {
+      process.stdout.write('.');
       process.stdout.write('\x07');
 
     }, iterator);
